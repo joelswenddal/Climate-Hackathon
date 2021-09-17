@@ -5,8 +5,8 @@ import express from 'express'
 import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
-import Template from './../template'
-import eventRoutes from './routes/event.routes'
+import Template from './../template.js'
+import eventRoutes from './routes/event.routes.js'
 //import authRoutes from './routes/auth.routes'
 
 const app = express()
@@ -26,7 +26,7 @@ app.use(helmet())
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors())
 
-app.use('/', userRoutes)
+app.use('/', eventRoutes)
 
 //app.use('/', authRoutes)
 

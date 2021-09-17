@@ -1,7 +1,7 @@
 
-import Event from '../models/event.model'
-import extend from 'lodash/extend'
-import errorHandler from '../helpers/dbErrorHandler'
+import Event from '../models/event.model.js'
+import extend from 'lodash/extend.js'
+import errorHandler from '../helpers/dbErrorHandler.js'
 
 
 // Note how this uses the mongoose methods to operate on the mongo db (e.g. find, findById, select, etc)

@@ -36,7 +36,7 @@ const EventSchema = new mongoose.Schema({
         required: 'Email is required'
     },
 
-    geo: Geolocation,
+    geo: String,
     updated: Date,
     created: {
         type: Date,
