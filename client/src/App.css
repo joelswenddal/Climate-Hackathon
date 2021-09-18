@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.input-block {
+  color: #61dafb;
+  border-width: 1em;
+  border-color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -36,7 +36,18 @@ const EventSchema = new mongoose.Schema({
         required: 'Email is required'
     },
 
-    geo: String,
+    geo: {
+        type: {
+            type: String, // Don't do `{ location: { type: String } }`
+            enum: ['Point'], // 'location.type' must be 'Point'
+            required: false
+        },
+        coordinates: {
+            type: [Number],
+            required: false
+        }
+    },
+
     updated: Date,
     created: {
         type: Date,

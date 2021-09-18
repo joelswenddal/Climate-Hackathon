@@ -14,6 +14,11 @@ router.route('/event/:eventId')
     .put(eventCtrl.update)
     .delete(eventCtrl.remove)
 
+router.route('/event/:eventId/match')
+    .get(eventCtrl.read)
+    .put(eventCtrl.match)
+
+
 router.param('eventId', eventCtrl.eventByID)
 
 export default router
