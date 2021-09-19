@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { MdHome } from 'react-icons/md';
+import Event from '../components/Event'
+
 
 
 export const CreateEventPage = () => {
@@ -13,8 +15,9 @@ export const CreateEventPage = () => {
     const [zip, setZip] = useState('');
     const [email, setEmail] = useState('');
 
-    //const history = useHistory(); //to return to home page after adding
+    const [eventData, setEventData] = useState('');
 
+    //const history = useHistory(); //to return to home page after adding
 
     const createEvent = async () => {
         const newEvent = { event_type, service_type, name, address, zip, email };
@@ -28,21 +31,23 @@ export const CreateEventPage = () => {
         });
         if (response.status === 201) {
             let result = await response.text();
-            //idSpan = <span> {`${id}`}</span>
 
             alert(`Success! Event is ${result}`);
 
             let newResult = JSON.parse(result)
-            console.log(newResult.data._id)
+            console.log(newResult.data._id)  //for testing
+
+            setEventData(<Event event={newResult.data}></Event>)
 
 
         } else {
             alert(`Failed to add event, status code = ${response.status}`);
         }
+
         //history.push("/");
     };
 
-    //const getEvent
+
 
     return (
         <div>
@@ -127,6 +132,9 @@ export const CreateEventPage = () => {
                         <button
                             onClick={createEvent}
                         >Log your event</button>
+                    </p>
+                    <p>
+                        {eventData}
                     </p>
                 </section>
             </main>
