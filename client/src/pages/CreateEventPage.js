@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { MdHome } from 'react-icons/md';
+
 
 export const CreateEventPage = () => {
 
@@ -12,7 +13,8 @@ export const CreateEventPage = () => {
     const [zip, setZip] = useState('');
     const [email, setEmail] = useState('');
 
-    const history = useHistory(); //to return to home page after adding
+    //const history = useHistory(); //to return to home page after adding
+
 
     const createEvent = async () => {
         const newEvent = { event_type, service_type, name, address, zip, email };
@@ -25,12 +27,22 @@ export const CreateEventPage = () => {
 
         });
         if (response.status === 201) {
-            alert("Event added successfully");
+            let result = await response.text();
+            //idSpan = <span> {`${id}`}</span>
+
+            alert(`Success! Event is ${result}`);
+
+            let newResult = JSON.parse(result)
+            console.log(newResult.data._id)
+
+
         } else {
             alert(`Failed to add event, status code = ${response.status}`);
         }
-        history.push("/");
+        //history.push("/");
     };
+
+    //const getEvent
 
     return (
         <div>

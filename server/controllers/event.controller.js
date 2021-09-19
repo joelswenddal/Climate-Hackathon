@@ -10,8 +10,9 @@ const create = async (req, res) => {
     const event = new Event(req.body)
     try {
         await event.save()
-        return res.status(201).json({
-            message: "Successfully registered an event!"
+        return res.status(201).send({
+            message: "Successfully registered an event!",
+            data: event
         })
     } catch (err) {
         return res.status(400).json({

@@ -9,10 +9,10 @@ content-type: application/json
 { 
     "event_type": "Request",
     "service_type": "Drinking water",
-    "name": "Zelda Fitzgerald",
-    "address": "18 Pinecrest Dr",
-    "zip": "02861",
-    "email": "zfitz@testmail.com",
+    "name": "Heather Krishna",
+    "address": "27 Higgins St",
+    "zip": "02967",
+    "email": "hktans@testmail.com",
     "geo": "none"
 
 }
@@ -35,10 +35,10 @@ content-type: application/json
 { 
     "event_type": "Request",
     "service_type": "Drinking water",
-    "name": "Tengo Kawana",
-    "address": "16 Higgins St",
-    "zip": "02918",
-    "email": "tkawa@testmail.com",
+    "name": "Heather Kawana",
+    "address": "25 Higgins St",
+    "zip": "02967",
+    "email": "hkwans@testmail.com",
     "geo": "none"
 
 }
